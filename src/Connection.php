@@ -89,8 +89,8 @@ class Connection extends BaseOptions{
             $this->AMQPConnection = new AMQPConnection($this->host, $this->port, $this->username, $this->password, $this->vhost);
             $this->channel = $this->AMQPConnection->channel();
             $this->channel->queue_declare($this->queue_name, false, true, false, false);
-            $this->channel->exchange_declare($this->exchange, $this->exchange_type, false, true, false);
-            $this->channel->queue_bind($this->queue_name, $this->exchange);
+            $this->channel->exchange_declare($this->exchange, 'topic', false, true, false);
+            $this->channel->queue_bind($this->queue_name, $this->exchange, 'mailer_queue/1');
         }
         catch (Exception $e)
         {
