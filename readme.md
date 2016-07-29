@@ -2,7 +2,6 @@ bluemove/tail
 =========
 
 THIS IS A FORK FROM mookofe/tail https://github.com/mookofe/tail
-=========
 
 RabbitMQ and PHP client for Laravel and Lumen that allows you to add and listen queues messages just simple.
 
